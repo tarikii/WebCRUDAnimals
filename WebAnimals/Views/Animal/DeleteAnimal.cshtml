@@ -1,0 +1,35 @@
+﻿@model WebAnimals.Models.Animal
+
+@{
+    ViewBag.Title = "Delete Animal";
+}
+
+<h2>Delete Animal</h2>
+
+@using (Html.BeginForm("DeleteAnimal", "Animal", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+
+    <div>
+        <h3>Type the ID of the animal you want to delete</h3>
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.IdAnimal)
+        @Html.TextBoxFor(m => m.IdAnimal, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.IdAnimal)
+    </div>
+
+    <br />
+
+    <div>
+        <button type="submit" class="btn btn-danger">Delete Animal</button>
+    </div>
+}
+
+<h3>@ViewBag.Error</h3>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

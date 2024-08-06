@@ -1,0 +1,10 @@
+﻿@model List<WebAnimals.Models.Animal>
+
+<ul>
+    @foreach (WebAnimals.Models.Animal animal in Model)
+    {
+        <li>Id: @animal.IdAnimal Name:@animal.NombreAnimal</li>
+    }
+</ul>
+
+<h2>@ViewBag.AnimalSuerte</h2>

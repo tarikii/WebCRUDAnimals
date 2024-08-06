@@ -1,0 +1,62 @@
+﻿@model WebAnimals.Models.Animal
+
+@{
+    ViewBag.Title = "ActualizarAnimal";
+}
+
+<h2>Actualizar Animal</h2>
+
+@using (Html.BeginForm("ActualizarAnimal", "Animal", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.IdAnimal)
+        @Html.TextBoxFor(m => m.IdAnimal)
+        @Html.ValidationMessageFor(m => m.IdAnimal)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.NombreAnimal)
+        @Html.TextBoxFor(m => m.NombreAnimal)
+        @Html.ValidationMessageFor(m => m.NombreAnimal)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Raza)
+        @Html.TextBoxFor(m => m.Raza)
+        @Html.ValidationMessageFor(m => m.Raza)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.RIdTipoAnimal)
+        @Html.TextBoxFor(m => m.RIdTipoAnimal)
+        @Html.ValidationMessageFor(m => m.RIdTipoAnimal)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.FechaNacimiento)
+        @Html.TextBoxFor(m => m.FechaNacimiento)
+        @Html.ValidationMessageFor(m => m.FechaNacimiento)
+    </div>
+
+    <br />
+
+    <div>
+        <button type="submit" class="btn btn-primary">Actualizar Animal</button>
+    </div>
+}
+
+<h3>@ViewBag.Error</h3>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
